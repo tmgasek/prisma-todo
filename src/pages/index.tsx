@@ -8,6 +8,7 @@ import styles from "../styles/Home.module.css";
 import { prisma } from "@/lib/prisma";
 
 // can't use :GET_SERVER_SIDE_PROPS_TYPE or it won't be inferred right
+// https://github.com/vercel/next.js/issues/15913
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
@@ -15,7 +16,7 @@ export const getServerSideProps = async (
     include: {
       author: {
         select: {
-          firstName: true,
+          name: true,
         },
       },
     },

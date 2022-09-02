@@ -14,7 +14,7 @@ export const getServerSideProps = async ({
     },
     include: {
       author: {
-        select: { firstName: true },
+        select: { name: true },
       },
     },
   });
